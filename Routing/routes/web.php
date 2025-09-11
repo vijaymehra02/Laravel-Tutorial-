@@ -23,3 +23,8 @@ Route::get('about', function () {
 Route::get('contect', function () {
     return view('contect_us');
 });
+Route::get('profile/{name}', function ($name) {
+    return view('profile',['name'=>$name]);
+});
+Route::redirect('home','/');
+Route::redirect('home/welcome','/');
