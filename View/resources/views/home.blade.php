@@ -1,0 +1,1 @@
+<h1>home page view call by controller</h1>
