@@ -13,15 +13,21 @@
 <form action="adduser" method="post" >
     @csrf
     <div class="input-wrapper"> 
-        <input placeholder="enter user name" name="username" type="text">
+        <input placeholder="enter user name" name="username" type="text" value="{{old('username')}}"
+        class={{ $errors->first('username')?'input-error':'' }}
+        >
         <span style="color:red" > @error('username'){{ $message }}@enderror </span>
     </div>
     <div class="input-wrapper">
-        <input placeholder="enter user email" name="useremail" type="text">
+        <input placeholder="enter user email" name="useremail" type="text" value="{{old('useremail')}}"
+        class="{{ $errors->first('useremail')?'input-error':'' }}"
+        >
         <span style="color:red" > @error('useremail'){{ $message }}@enderror </span>
     </div>
     <div class="input-wrapper">
-        <input placeholder="enter your highr egucation" name="useregucation" type="text">
+        <input placeholder="enter your highr egucation" name="useregucation" type="text" value="{{old('useregucation')}}"
+        class="{{ $errors->first('useregucation')?'input-error':'' }}"
+        >
         <span style="color:red" > @error('useregucation'){{ $message }}@enderror </span>
     </div>
     <div class="input-wrapper">
@@ -74,5 +80,8 @@
     }
     .input-wrapper{
         margin: 10px;
+    }
+    .input-error{
+        border: 1px solid red;
     }
 </style>
