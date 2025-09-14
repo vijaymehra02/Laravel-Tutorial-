@@ -1,18 +1,32 @@
 <h2>user form</h2>
 
+<!-- @if ($errors->any())
+
+@foreach ( $errors->all() as $error)
+ <div>
+    {{ $error }}
+ </div>
+@endforeach
+
+@endif -->
+
 <form action="adduser" method="post" >
     @csrf
-    <div class="input-wrapper">
+    <div class="input-wrapper"> 
         <input placeholder="enter user name" name="username" type="text">
+        <span style="color:red" > @error('username'){{ $message }}@enderror </span>
     </div>
     <div class="input-wrapper">
         <input placeholder="enter user email" name="useremail" type="text">
+        <span style="color:red" > @error('useremail'){{ $message }}@enderror </span>
     </div>
     <div class="input-wrapper">
         <input placeholder="enter your highr egucation" name="useregucation" type="text">
+        <span style="color:red" > @error('useregucation'){{ $message }}@enderror </span>
     </div>
     <div class="input-wrapper">
         <p>your skills</p>
+        <span style="color:red" > @error('skill'){{ $message }}@enderror </span>
         <input type="checkbox" name="skill" value="php" id="checkphp">
         <label for="checkphp">PHP</label>
         <input type="checkbox" name="skill" value="node" id="checknode">
@@ -22,6 +36,7 @@
     </div>
     <div class="input-wrapper">
         <p>gender</p>
+        <span style="color:red" > @error('gender'){{ $message }}@enderror </span>
         <input type="radio" name="gender" value="male" id="gender1">
         <label for="gender1">mail</label>
         <input type="radio" name="gender" value="femail" id="gender2">
@@ -29,11 +44,12 @@
     </div>
     <div class="input-wrapper">
         <p>select city</p>
+        <span style="color:red" > @error('city'){{ $message }}@enderror </span>
          <select name="city">
-            <option value="jbp">jabalpur</option>
-            <option value="bpl">bhopal</option>
-            <option value="idr">indore</option>
-            <option value="nsp">narsingpur</option>
+            <option name="city" value="jbp">jabalpur</option>
+            <option name="city" value="bpl">bhopal</option>
+            <option name="city" value="idr">indore</option>
+            <option name="city" value="nsp">narsingpur</option>
          </select>
     </div>
     <div class="input-wrapper">
