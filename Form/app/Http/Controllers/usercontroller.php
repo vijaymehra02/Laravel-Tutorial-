@@ -9,10 +9,14 @@ class usercontroller extends Controller
    function adduser(Request $req){
     $req->validate(
         [
-           'username'=>'required|min:3|max:20',
+           'username'=>'required|min:3|max:20|uppercase',
            'useremail'=>'required|email',
+           'useregucation'=>'required',
+           'gender'=>'required',
            'city'=>'required',
            'skill'=>'required'
+        ],[
+         'username.required'=>'username is must be required'
         ]
         );
 
