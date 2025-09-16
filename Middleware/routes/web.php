@@ -12,3 +12,7 @@ Route::get(
     'home',[UserController::class,'home'
 ])->middleware('checkAge');
 
+Route::get(
+    'deshboad',[UserController::class,'deshboad'
+])->middleware('customGroup1');
+

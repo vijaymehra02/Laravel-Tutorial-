@@ -43,6 +43,11 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        // ✅ apna custom group
+        'customGroup1' => [
+            \App\Http\Middleware\AgeCheck::class,  
+            \App\Http\Middleware\CheckCountry::class, 
+        ],
     ];
 
     /**

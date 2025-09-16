@@ -7,7 +7,10 @@ use View;
 
 class usercontroller extends Controller
 {
-    function home(){
-       return View('home');
+    function home(Request $req){
+       return View('home',['data'=>$req]);
+    }
+    function deshboad(Request $req){
+       return View('deshboad',['data'=>$req]);
     }
 }
