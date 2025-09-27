@@ -19,6 +19,10 @@ class StudentController extends Controller
             return "NO student added" ;
             
         }
+   }
 
+   function studentdata(){
+       $allsata = studentt::all();
+       return view('student-list',['students'=>$allsata]);
    }
 }
