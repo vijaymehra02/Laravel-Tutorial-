@@ -6,4 +6,5 @@ return [
     'contect' => 'संपर्क करें',
     'aboutheading' => 'यह पेज के बारे में है',
     'contectheading' => 'यह आईए संपर्क पृष्ठ',
+    'contectsubheading' => ':name से संपर्क',
 ];

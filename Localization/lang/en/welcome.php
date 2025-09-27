@@ -6,4 +6,5 @@ return [
     'contect' => 'contect',
     'aboutheading' => 'this ia about page',
     'contectheading' => 'this ia contect page',
+    'contectsubheading' => 'Contect with :vijay ',
 ];

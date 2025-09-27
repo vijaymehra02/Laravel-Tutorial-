@@ -13,9 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::middleware('setlang')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('setlangt/{land}', function ($lang) {
+        Session::put('lang', $lang);
+        return redirect('/');
+    });
+
+    Route::view('about', 'about');
+    Route::view('contect', 'contect');
 });
 
-Route::view('about','about');
-Route::view('contect','contect');
