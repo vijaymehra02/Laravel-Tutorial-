@@ -6,6 +6,7 @@
         <th>Name</th>
         <th>email</th>
         <th>phone no</th>
+        <th>operations</th>
     </header>
     @foreach ( $students as $student )
     <tbody>
@@ -17,6 +18,9 @@
           </td>
           <td>
             {{ $student->phone }}
+          </td>
+          <td>
+             <a href="{{ 'delete/'.$student->id  }} ">Delete</a>
           </td>
     </tbody>
     @endforeach

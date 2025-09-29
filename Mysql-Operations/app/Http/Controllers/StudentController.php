@@ -25,4 +25,13 @@ class StudentController extends Controller
        $allsata = studentt::all();
        return view('student-list',['students'=>$allsata]);
    }
+
+   function delete($id){
+          $isstudent = studentt::destroy($id);
+          if($isstudent){
+            return redirect('list');
+          }else{
+            return 'no data ';
+          }
+   }
 }

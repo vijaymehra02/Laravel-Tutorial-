@@ -21,4 +21,7 @@ Route::get('/', function () {
 Route::view('add','add-student');
 
 Route::post('add',[StudentController::class,'add']);
+
 Route::get('list',[StudentController::class,'studentdata']);
+
+Route::get('delete/{id}',[StudentController::class,'delete']);
