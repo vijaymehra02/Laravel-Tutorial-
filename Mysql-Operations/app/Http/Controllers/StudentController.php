@@ -34,4 +34,9 @@ class StudentController extends Controller
             return 'no data ';
           }
    }
+
+   function edit($id){
+    $student = studentt::find($id);
+    return view("edit-student",['student'=>$student]);
+   }
 }

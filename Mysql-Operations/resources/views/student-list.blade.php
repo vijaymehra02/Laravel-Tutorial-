@@ -21,6 +21,7 @@
           </td>
           <td>
              <a href="{{ 'delete/'.$student->id  }} ">Delete</a>
+             <a href="{{ 'edit/'.$student->id }}" > Edit</a>
           </td>
     </tbody>
     @endforeach
