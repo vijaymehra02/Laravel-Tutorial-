@@ -22,7 +22,7 @@ class StudentController extends Controller
    }
 
    function studentdata(){
-       $allsata = studentt::all();
+       $allsata = studentt::paginate(2);
        return view('student-list',['students'=>$allsata]);
    }
 
@@ -54,7 +54,13 @@ class StudentController extends Controller
    }
 
    function search(Request $request){
-      $student = studentt::where('name','like',"%$request->searchval%")->get();
+      $student = studentt::where('name','like',"%$request->searchval%")->paginate(2);
+
+      
+      $student->appends(['searchval' => $request->searchval]);
+
+
       return view('student-list',['students'=>$student,'search'=>$request->searchval]);
+      // return $student;
    }
 }

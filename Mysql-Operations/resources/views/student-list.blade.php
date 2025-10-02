@@ -30,3 +30,10 @@
     </tbody>
     @endforeach
 </table>
+{{ $students->links() }}
+<style>
+  .w-5{
+    width: 37px;
+    height: 12px;
+  }
+</style>
