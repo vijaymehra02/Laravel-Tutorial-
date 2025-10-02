@@ -1,6 +1,10 @@
 <h1>all students details</h1>
 
 <p> {{ $students }} </p>
+<form action="search" method="get">
+  <input type="text" placeholder="search by name" name="searchval" value="{{ @$search }}">
+  <button>search</button>
+</form>
 <table border="1">
     <header>
         <th>Name</th>

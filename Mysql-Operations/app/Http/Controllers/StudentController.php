@@ -52,4 +52,9 @@ class StudentController extends Controller
         return ' fauld to update';
      }
    }
+
+   function search(Request $request){
+      $student = studentt::where('name','like',"%$request->searchval%")->get();
+      return view('student-list',['students'=>$student,'search'=>$request->searchval]);
+   }
 }
