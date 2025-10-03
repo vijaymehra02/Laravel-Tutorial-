@@ -22,7 +22,7 @@ class StudentController extends Controller
    }
 
    function studentdata(){
-       $allsata = studentt::paginate(2);
+       $allsata = studentt::paginate(4);
        return view('student-list',['students'=>$allsata]);
    }
 
@@ -54,7 +54,7 @@ class StudentController extends Controller
    }
 
    function search(Request $request){
-      $student = studentt::where('name','like',"%$request->searchval%")->paginate(2);
+      $student = studentt::where('name','like',"%$request->searchval%")->paginate(4);
 
       
       $student->appends(['searchval' => $request->searchval]);
@@ -62,5 +62,10 @@ class StudentController extends Controller
 
       return view('student-list',['students'=>$student,'search'=>$request->searchval]);
       // return $student;
+   }
+
+   function selects_multipals(Request $request){
+     $result = studentt::destroy($request->selects);
+     return redirect('list');
    }
 }
