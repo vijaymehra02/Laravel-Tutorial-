@@ -1,0 +1,1 @@
+<h2 style="background-color:red">i am navbar {{ $data ?? 'all pages' }}</h2>
